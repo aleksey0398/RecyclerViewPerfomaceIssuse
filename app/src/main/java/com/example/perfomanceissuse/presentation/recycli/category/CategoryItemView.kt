@@ -27,13 +27,14 @@ class CategoryItemView @JvmOverloads constructor(
             LayoutParams.WRAP_CONTENT
         )
         binding.recyclerProducts.apply {
-            adapter = adapter
+            this.adapter = this@CategoryItemView.adapter
             addItemDecoration(CategoryDecoration())
 
             layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
             }
         }
+        clipChildren = false
     }
 
     @RecyclerItemStateBinder

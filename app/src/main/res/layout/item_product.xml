@@ -5,7 +5,7 @@
     android:layout_width="200dp"
     android:layout_height="wrap_content"
     android:background="@drawable/rounded"
-    android:elevation="10dp"
+    android:elevation="4dp"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.constraintlayout.widget.Guideline
@@ -40,7 +40,7 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/dm"
+        tools:src="@drawable/dm"
         app:layout_constraintEnd_toStartOf="@+id/guideline_bottom"
         app:layout_constraintStart_toStartOf="@+id/guideline_top"
         app:layout_constraintTop_toTopOf="@+id/guideline_start" />
