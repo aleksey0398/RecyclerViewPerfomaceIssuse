@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.detmir.recycli.adapters.RecyclerGlobalConfig
 import com.example.perfomanceissuse.databinding.ActivityMainBinding
 import com.example.perfomanceissuse.presentation.recycli.RecycliActivity
 import com.example.perfomanceissuse.presentation.vanilla.VanillaActivity
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RecyclerGlobalConfig.useAsyncDiffer = false
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }

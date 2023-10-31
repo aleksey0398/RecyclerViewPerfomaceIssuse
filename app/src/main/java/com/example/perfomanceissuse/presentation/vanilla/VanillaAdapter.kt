@@ -19,9 +19,12 @@ import com.example.perfomanceissuse.presentation.vanilla.viewholder.ProductViewH
 class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     private var items: List<RecyclerItem> = emptyList()
+    private val diffUtil = VanillaDiffUtil()
 
     fun submitList(items: List<RecyclerItem>) {
-        DiffUtil.calculateDiff(VanillaDiffUtil(this.items, items)).dispatchUpdatesTo(this)
+        diffUtil.newList = items
+        diffUtil.oldList = this.items
+        DiffUtil.calculateDiff(diffUtil).dispatchUpdatesTo(this)
         this.items = items
     }
 
@@ -65,8 +68,8 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
     }
 
     class VanillaDiffUtil(
-        private val oldList: List<RecyclerItem>,
-        private val newList: List<RecyclerItem>,
+        var oldList: List<RecyclerItem> = emptyList(),
+        var newList: List<RecyclerItem> = emptyList(),
     ) : DiffUtil.Callback() {
 
         override fun getOldListSize(): Int = oldList.size
@@ -74,7 +77,7 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
         override fun getNewListSize(): Int = newList.size
 
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            return oldList[oldItemPosition] === newList[newItemPosition]
+            return oldList[oldItemPosition].provideId() == newList[newItemPosition].provideId()
         }
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {

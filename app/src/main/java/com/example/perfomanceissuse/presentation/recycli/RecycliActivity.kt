@@ -1,15 +1,13 @@
 package com.example.perfomanceissuse.presentation.recycli
 
-import android.graphics.Rect
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.detmir.recycli.adapters.RecyclerAdapter
 import com.example.perfomanceissuse.MainActivityViewModel
 import com.example.perfomanceissuse.databinding.ActivityRecycliBinding
+import com.example.perfomanceissuse.presentation.decoration.CategoryDecoration
 import com.google.android.material.snackbar.Snackbar
 
 class RecycliActivity : AppCompatActivity() {
@@ -34,15 +32,11 @@ class RecycliActivity : AppCompatActivity() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = this@RecycliActivity.adapter
-            addItemDecoration(
-                object : RecyclerView.ItemDecoration() {
-
-                }
-            )
+            addItemDecoration(CategoryDecoration())
         }
     }
 
-    private fun setupToolbar(){
+    private fun setupToolbar() {
         supportActionBar?.title = "Recycli"
     }
 
