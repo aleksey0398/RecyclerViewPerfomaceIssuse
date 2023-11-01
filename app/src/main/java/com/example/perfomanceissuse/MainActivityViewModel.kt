@@ -10,6 +10,8 @@ import com.example.perfomanceissuse.domain.usecase.GetCategoriesUseCase
 import com.example.perfomanceissuse.presentation.recycli.category.CategoryItem
 import com.example.perfomanceissuse.presentation.recycli.loading.LoadingItem
 import com.example.perfomanceissuse.presentation.recycli.product.ProductItem
+import com.example.perfomanceissuse.presentation.recycli.ui.ButtonItem
+import com.example.perfomanceissuse.presentation.recycli.ui.price.PriceItem
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel : ViewModel() {
@@ -36,9 +38,16 @@ class MainActivityViewModel : ViewModel() {
                                 ProductItem.State(
                                     id = product.id,
                                     name = product.name,
-                                    priceNew = product.priceNew,
-                                    priceOld = product.priceOld,
+                                    priceState = PriceItem.State(
+                                        id = it.id + "_price",
+                                        old = product.priceOld,
+                                        new = product.priceNew
+                                    ),
                                     imageUrl = product.imageUrl,
+                                    buttonState = ButtonItem.State(
+                                        id = product.id + "_button",
+                                        text = product.name.take(8)
+                                    )
                                 )
                             }
                         )

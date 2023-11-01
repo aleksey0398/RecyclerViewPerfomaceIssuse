@@ -11,8 +11,8 @@ class ProductViewHolder(
 
     fun bind(state: ProductItem.State) {
         binding.textViewProductName.text = state.name
-        binding.textViewPriceNew.text = state.priceNew
-        binding.textViewPriceOld.text = state.priceOld
+        binding.textViewPriceNew.text = state.priceState.new
+        binding.textViewPriceOld.text = state.priceState.old
         binding.imageView.load(state.imageUrl)
     }
 }

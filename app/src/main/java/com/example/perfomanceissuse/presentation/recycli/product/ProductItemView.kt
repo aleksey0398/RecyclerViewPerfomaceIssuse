@@ -25,13 +25,15 @@ class ProductItemView @JvmOverloads constructor(
         )
         elevation = 10f
         setBackgroundResource(R.drawable.rounded)
+        val padding = 20
+        setPadding(padding, padding, padding, padding)
     }
 
     @RecyclerItemStateBinder
     override fun bindState(state: ProductItem.State) {
         binding.textViewProductName.text = state.name
-        binding.textViewPriceNew.text = state.priceNew
-        binding.textViewPriceOld.text = state.priceOld
+        binding.price.bindState(state.priceState)
+        binding.button.bindState(state.buttonState)
 //        binding.imageView.load(state.imageUrl)
     }
 }
