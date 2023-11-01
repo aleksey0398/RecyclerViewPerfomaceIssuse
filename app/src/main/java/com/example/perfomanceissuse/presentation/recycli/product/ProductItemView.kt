@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.os.trace
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.perfomanceissuse.R
@@ -19,12 +20,17 @@ class ProductItemView @JvmOverloads constructor(
     private val binding = ItemProductRecycliBinding.inflate(LayoutInflater.from(context), this)
 
     init {
-        layoutParams = LayoutParams(
-            400,
-            LayoutParams.WRAP_CONTENT
-        )
-        elevation = 10f
-        setBackgroundResource(R.drawable.rounded)
+        trace("ProductItemView init") {
+            layoutParams = LayoutParams(
+                400,
+                LayoutParams.WRAP_CONTENT
+            )
+            elevation = 10f
+            setBackgroundResource(R.drawable.rounded)
+            val padding = 20
+            setPadding(padding, padding, padding, padding)
+        }
+
     }
 
     @RecyclerItemStateBinder

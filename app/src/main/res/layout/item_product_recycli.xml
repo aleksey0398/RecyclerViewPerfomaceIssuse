@@ -6,44 +6,17 @@
     android:layout_height="wrap_content"
     android:background="@drawable/rounded"
     android:elevation="4dp"
+    android:padding="10dp"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="16dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="16dp" />
-
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/dm"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_bottom"
-        app:layout_constraintStart_toStartOf="@+id/guideline_top"
-        app:layout_constraintTop_toTopOf="@+id/guideline_start" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView_product_name"
@@ -55,9 +28,9 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_bottom"
-        app:layout_constraintStart_toStartOf="@+id/guideline_top"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         tools:text="product 1 sdkhjfgjsdhgf dhjsgf jdhsg fhjsd fgksdhjg fgald gfhdsf " />
 
     <com.google.android.material.textview.MaterialTextView
@@ -68,9 +41,8 @@
         android:textColor="@android:color/holo_red_light"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/guideline_top"
-        app:layout_constraintTop_toBottomOf="@+id/textView_product_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_product_name"
         tools:text="1000" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -79,8 +51,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_price_new"
-        app:layout_constraintStart_toEndOf="@+id/textView_price_new"
-        app:layout_constraintTop_toTopOf="@+id/textView_price_new"
+        app:layout_constraintBottom_toBottomOf="@id/textView_price_new"
+        app:layout_constraintStart_toEndOf="@id/textView_price_new"
+        app:layout_constraintTop_toTopOf="@id/textView_price_new"
         tools:text="1200" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_price_new" />
 </merge>
