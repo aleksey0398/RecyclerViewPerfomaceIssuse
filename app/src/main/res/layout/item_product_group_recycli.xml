@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/view_1"
+        android:background="@drawable/rounded"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dm"
+        app:layout_constraintEnd_toEndOf="@id/view_1"
+        app:layout_constraintStart_toStartOf="@id/view_1"
+        app:layout_constraintTop_toTopOf="@id/view_1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:lines="4"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_1"
+        app:layout_constraintStart_toStartOf="@id/view_1"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:text="product 1 sdkhjfgjsdhgf dhjsgf jdhsg fhjsd fgksdhjg fgald gfhdsf " />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/view_1"
+        app:layout_constraintTop_toBottomOf="@+id/textView_product_name"
+        tools:text="1000" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_old"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_price_new"
+        app:layout_constraintTop_toTopOf="@+id/textView_price_new"
+        tools:text="1200" />
+
+<!--    -->
+    <View
+        android:id="@+id/view_2"
+        android:background="@drawable/rounded"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/view_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dm"
+        app:layout_constraintEnd_toEndOf="@id/view_2"
+        app:layout_constraintStart_toStartOf="@id/view_2"
+        app:layout_constraintTop_toTopOf="@id/view_2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_product_name1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:lines="4"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_2"
+        app:layout_constraintStart_toStartOf="@id/view_2"
+        app:layout_constraintTop_toBottomOf="@id/imageView1"
+        tools:text="product 1 sdkhjfgjsdhgf dhjsgf jdhsg fhjsd fgksdhjg fgald gfhdsf " />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_new1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/view_2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_product_name1"
+        tools:text="1000" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_old1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_price_new1"
+        app:layout_constraintTop_toTopOf="@+id/textView_price_new1"
+        tools:text="1200" />
+<!-- -->
+    <View
+        android:id="@+id/view_3"
+        android:background="@drawable/rounded"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/view_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dm"
+        app:layout_constraintEnd_toEndOf="@id/view_3"
+        app:layout_constraintStart_toStartOf="@id/view_3"
+        app:layout_constraintTop_toTopOf="@id/view_3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_product_name2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:lines="4"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_3"
+        app:layout_constraintStart_toStartOf="@id/view_3"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        tools:text="product 1 sdkhjfgjsdhgf dhjsgf jdhsg fhjsd fgksdhjg fgald gfhdsf " />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_new2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/view_3"
+        app:layout_constraintTop_toBottomOf="@+id/textView_product_name2"
+        tools:text="1000" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_price_old2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_price_new2"
+        app:layout_constraintTop_toTopOf="@+id/textView_price_new2"
+        tools:text="1200" />
+</merge>

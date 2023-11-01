@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
 import com.detmir.recycli.adapters.RecyclerAdapter
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
@@ -37,7 +38,10 @@ class CategoryItemView @JvmOverloads constructor(
 
             layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
+                recycleChildrenOnDetach = true
+                initialPrefetchItemCount = 3
             }
+            setRecycledViewPool(pool)
         }
 
     }
@@ -47,5 +51,6 @@ class CategoryItemView @JvmOverloads constructor(
         binding.title.text = state.title
         adapter.bindState(state.products)
     }
-
 }
+
+val pool = RecycledViewPool()

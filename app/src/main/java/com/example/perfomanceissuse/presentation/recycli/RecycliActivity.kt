@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.detmir.recycli.adapters.RecyclerAdapter
 import com.example.perfomanceissuse.MainActivityViewModel
 import com.example.perfomanceissuse.databinding.ActivityRecycliBinding
@@ -14,7 +15,7 @@ class RecycliActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecycliBinding
 
-    private val viewModel: MainActivityViewModel by viewModels()
+    private val viewModel: RecycliActivityViewModel by viewModels()
 
     private val adapter: RecyclerAdapter = RecyclerAdapter()
 
@@ -33,6 +34,9 @@ class RecycliActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             adapter = this@RecycliActivity.adapter
             addItemDecoration(CategoryDecoration())
+            setRecycledViewPool(RecyclerView.RecycledViewPool().apply {
+                setMaxRecycledViews(0, 5)
+            })
         }
     }
 
