@@ -16,62 +16,62 @@ class CategoryFakeRepositoryImpl : CategoryRepository {
 
     private fun getCategories(): List<Category> {
         return listOf(
-            Category(
+            Category.Category1(
                 id = "cat1",
                 name = "Категория 1",
                 products = (getElectronicsList() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category2(
                 id = "cat2",
                 name = "Категория 2",
                 products = (getIHerbLis() + getIHerbLis()).shuffled()
             ),
-            Category(
+            Category.Category3(
                 id = "cat3",
                 name = "Категория 3",
                 products = (getIHerbLis() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category2(
                 id = "cat4",
                 name = "Категория 4",
                 products = (getElectronicsList() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category3(
                 id = "cat5",
                 name = "Категория 5",
                 products = (getIHerbLis() + getIHerbLis()).shuffled()
             ),
-            Category(
+            Category.Category1(
                 id = "cat6",
                 name = "Категория 6",
                 products = (getIHerbLis() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category3(
                 id = "cat7",
                 name = "Категория 7",
                 products = (getElectronicsList() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category2(
                 id = "cat8",
                 name = "Категория 8",
                 products = (getIHerbLis() + getIHerbLis()).shuffled()
             ),
-            Category(
+            Category.Category1(
                 id = "cat9",
                 name = "Категория 9",
                 products = (getIHerbLis() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category2(
                 id = "cat 10",
                 name = "Категория 10",
                 products = (getElectronicsList() + getElectronicsList()).shuffled()
             ),
-            Category(
+            Category.Category1(
                 id = "cat 11",
                 name = "Категория 11",
                 products = (getIHerbLis() + getIHerbLis()).shuffled()
             ),
-            Category(
+            Category.Category3(
                 id = "cat 12",
                 name = "Категория 12",
                 products = (getIHerbLis() + getElectronicsList()).shuffled()

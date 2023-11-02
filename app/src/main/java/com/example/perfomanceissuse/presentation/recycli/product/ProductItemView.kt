@@ -2,6 +2,7 @@ package com.example.perfomanceissuse.presentation.recycli.product
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
@@ -19,6 +20,8 @@ class ProductItemView @JvmOverloads constructor(
     private val binding = ItemProductRecycliBinding.inflate(LayoutInflater.from(context), this)
 
     init {
+        Log.d("prefetch", "Create new product")
+
         layoutParams = LayoutParams(
             400,
             LayoutParams.WRAP_CONTENT
@@ -31,6 +34,7 @@ class ProductItemView @JvmOverloads constructor(
 
     @RecyclerItemStateBinder
     override fun bindState(state: ProductItem.State) {
+        Log.d("prefetch", "onBind product(${state.id})")
         binding.textViewProductName.text = state.name
         binding.price.bindState(state.priceState)
         binding.button.bindState(state.buttonState)

@@ -21,6 +21,8 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
     private var items: List<RecyclerItem> = emptyList()
     private val diffUtil = VanillaDiffUtil()
 
+    private val sharedViewPool = RecyclerView.RecycledViewPool()
+
     fun submitList(items: List<RecyclerItem>) {
         diffUtil.newList = items
         diffUtil.oldList = this.items
@@ -37,6 +39,7 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
 
             VIEW_TYPE_CATEGORY -> {
                 val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                binding.recyclerProducts.setRecycledViewPool(sharedViewPool)
                 CategoryViewHolder(binding)
             }
 

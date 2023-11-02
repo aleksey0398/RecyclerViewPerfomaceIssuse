@@ -5,7 +5,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.detmir.recycli.adapters.RecyclerAdapter
-import com.example.perfomanceissuse.MainActivityViewModel
 import com.example.perfomanceissuse.databinding.ActivityRecycliBinding
 import com.example.perfomanceissuse.presentation.decoration.CategoryDecoration
 import com.google.android.material.snackbar.Snackbar
@@ -14,7 +13,7 @@ class RecycliActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecycliBinding
 
-    private val viewModel: MainActivityViewModel by viewModels()
+    private val viewModel: RecycliViewModel by viewModels()
 
     private val adapter: RecyclerAdapter = RecyclerAdapter()
 
