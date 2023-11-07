@@ -10,7 +10,7 @@ import kotlin.random.nextInt
 class CategoryFakeRepositoryImpl : CategoryRepository {
 
     override suspend fun getAllCategories(): List<Category> {
-        delay(Random.nextInt(100..500).toLong())
+        delay(Random.nextInt(500..1000).toLong())
         return getCategories()
     }
 

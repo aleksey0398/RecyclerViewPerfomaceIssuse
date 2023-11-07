@@ -8,6 +8,8 @@ import com.detmir.recycli.adapters.RecyclerAdapter
 import com.example.perfomanceissuse.databinding.ActivityRecycliBinding
 import com.example.perfomanceissuse.presentation.decoration.CategoryDecoration
 import com.google.android.material.snackbar.Snackbar
+import vivid.money.prefetchviewpool.core.bindToLifecycle
+import vivid.money.prefetchviewpool.coroutines.setupWithPrefetchViewPool
 
 class RecycliActivity : AppCompatActivity() {
 
@@ -33,6 +35,11 @@ class RecycliActivity : AppCompatActivity() {
             adapter = this@RecycliActivity.adapter
             addItemDecoration(CategoryDecoration())
         }
+        binding.recycler.setupWithPrefetchViewPool {
+            setPrefetchBound(1, 5)
+            setPrefetchBound(2, 5)
+            setPrefetchBound(3, 5)
+        }.bindToLifecycle(this)
     }
 
     private fun setupToolbar() {

@@ -21,6 +21,6 @@ class ProductViewHolder(
         binding.textViewProductName.text = state.name
         binding.textViewPriceNew.text = state.priceState.new
         binding.textViewPriceOld.text = state.priceState.old
-        binding.imageView.load(state.imageUrl)
+//        binding.imageView.load(state.imageUrl)
     }
 }

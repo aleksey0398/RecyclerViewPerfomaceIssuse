@@ -8,6 +8,7 @@ import com.example.perfomanceissuse.MainActivityViewModel
 import com.example.perfomanceissuse.databinding.ActivityVanillaBinding
 import com.example.perfomanceissuse.presentation.decoration.CategoryDecoration
 import com.google.android.material.snackbar.Snackbar
+import vivid.money.prefetchviewpool.coroutines.setupWithPrefetchViewPool
 
 class VanillaActivity : AppCompatActivity() {
 
@@ -29,11 +30,19 @@ class VanillaActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         binding.recycler.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context).apply {
+                isItemPrefetchEnabled = false
+            }
+            setHasFixedSize(true)
+            setItemViewCacheSize(0)
 
             adapter = this@VanillaActivity.adapter
 
             addItemDecoration(CategoryDecoration())
+
+            setupWithPrefetchViewPool {
+                setPrefetchBound(VanillaAdapter.VIEW_TYPE_CATEGORY, 7)
+            }
         }
     }
 

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.detmir.recycli.adapters.RecyclerItem
 import com.example.perfomanceissuse.databinding.ItemCategoryBinding
@@ -20,8 +21,7 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     private var items: List<RecyclerItem> = emptyList()
     private val diffUtil = VanillaDiffUtil()
-
-    private val sharedViewPool = RecyclerView.RecycledViewPool()
+    var sharedViewPool = RecycledViewPool()
 
     fun submitList(items: List<RecyclerItem>) {
         diffUtil.newList = items
@@ -88,7 +88,7 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
         }
     }
 
-    private companion object {
+     companion object {
         const val VIEW_TYPE_PRODUCT = 0
         const val VIEW_TYPE_CATEGORY = 1
         const val VIEW_TYPE_LOADING = 2

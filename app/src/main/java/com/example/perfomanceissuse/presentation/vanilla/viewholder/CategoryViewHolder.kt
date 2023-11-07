@@ -7,6 +7,7 @@ import com.example.perfomanceissuse.databinding.ItemCategoryBinding
 import com.example.perfomanceissuse.presentation.decoration.ProductDecoration
 import com.example.perfomanceissuse.presentation.recycli.category.CategoryItem
 import com.example.perfomanceissuse.presentation.vanilla.VanillaAdapter
+import vivid.money.prefetchviewpool.coroutines.setupWithPrefetchViewPool
 
 class CategoryViewHolder(
     private val binding: ItemCategoryBinding,
@@ -23,8 +24,12 @@ class CategoryViewHolder(
             layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
             }
-
             addItemDecoration(ProductDecoration())
+            setItemViewCacheSize(0)
+            setHasFixedSize(true)
+            setupWithPrefetchViewPool {
+                setPrefetchBound(VanillaAdapter.VIEW_TYPE_PRODUCT, 3)
+            }
         }
     }
 
@@ -32,6 +37,7 @@ class CategoryViewHolder(
         Log.d("prefetch", "Category onBind (${state.title})")
 
         binding.title.text = state.title
+
         vanillaAdapter.submitList(state.products)
     }
 }

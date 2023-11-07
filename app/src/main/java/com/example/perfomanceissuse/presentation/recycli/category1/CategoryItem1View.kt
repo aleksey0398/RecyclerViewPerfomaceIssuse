@@ -12,6 +12,8 @@ import com.example.perfomanceissuse.R
 import com.example.perfomanceissuse.databinding.ItemCategory1RecycliBinding
 import com.example.perfomanceissuse.presentation.decoration.ProductDecoration
 import com.example.perfomanceissuse.presentation.recycli.PoolHolder
+import vivid.money.prefetchviewpool.core.bindToLifecycle
+import vivid.money.prefetchviewpool.coroutines.setupWithPrefetchViewPool
 
 @RecyclerItemView
 class CategoryItem1View @JvmOverloads constructor(
