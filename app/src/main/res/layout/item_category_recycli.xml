@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:parentTag="android.widget.LinearLayout"
+    tools:parentTag="androidx.appcompat.widget.LinearLayoutCompat"
     android:elevation="5dp"
     android:orientation="vertical">
 
