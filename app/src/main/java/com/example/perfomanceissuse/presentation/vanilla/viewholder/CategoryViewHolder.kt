@@ -1,10 +1,12 @@
 package com.example.perfomanceissuse.presentation.vanilla.viewholder
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.perfomanceissuse.databinding.ItemCategoryBinding
 import com.example.perfomanceissuse.presentation.decoration.ProductDecoration
 import com.example.perfomanceissuse.presentation.recycli.category.CategoryItem
+import com.example.perfomanceissuse.presentation.vanilla.TAG_VANILLA
 import com.example.perfomanceissuse.presentation.vanilla.VanillaAdapter
 
 class CategoryViewHolder(
@@ -19,6 +21,8 @@ class CategoryViewHolder(
 
             layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
+                recycleChildrenOnDetach = true
+                initialPrefetchItemCount = 3
             }
 
             addItemDecoration(ProductDecoration())
@@ -27,6 +31,6 @@ class CategoryViewHolder(
 
     fun bind(state: CategoryItem.State) {
         binding.title.text = state.title
-        vanillaAdapter.submitList(state.products)
+        vanillaAdapter.submitNestedList(state.products)
     }
 }

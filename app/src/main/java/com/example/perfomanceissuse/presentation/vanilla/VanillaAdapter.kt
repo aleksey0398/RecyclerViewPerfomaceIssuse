@@ -1,10 +1,12 @@
 package com.example.perfomanceissuse.presentation.vanilla
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.detmir.recycli.adapters.RecyclerItem
 import com.example.perfomanceissuse.databinding.ItemCategoryBinding
@@ -21,6 +23,8 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
     private var items: List<RecyclerItem> = emptyList()
     private val diffUtil = VanillaDiffUtil()
 
+    private val sharedViewPoll = RecycledViewPool()
+
     fun submitList(items: List<RecyclerItem>) {
         diffUtil.newList = items
         diffUtil.oldList = this.items
@@ -28,15 +32,25 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
         this.items = items
     }
 
+    fun submitNestedList(items: List<RecyclerItem>) {
+        if (this.items.isEmpty()) {
+            this.items = items
+        } else {
+            submitList(items)
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return when (viewType) {
             VIEW_TYPE_PRODUCT -> {
-                val binding = ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                val binding =
+                    ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 ProductViewHolder(binding)
             }
 
             VIEW_TYPE_CATEGORY -> {
                 val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                binding.recyclerProducts.setRecycledViewPool(sharedViewPoll)
                 CategoryViewHolder(binding)
             }
 
@@ -85,10 +99,11 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
         }
     }
 
-    private companion object {
+     companion object {
         const val VIEW_TYPE_PRODUCT = 0
         const val VIEW_TYPE_CATEGORY = 1
         const val VIEW_TYPE_LOADING = 2
-        const val TAG = "MyAdapter"
     }
 }
+
+const val TAG_VANILLA = "vanilla"

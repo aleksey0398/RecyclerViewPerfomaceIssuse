@@ -1,9 +1,11 @@
 package com.example.perfomanceissuse.presentation.vanilla.viewholder
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.perfomanceissuse.databinding.ItemProductBinding
 import com.example.perfomanceissuse.presentation.recycli.product.ProductItem
+import com.example.perfomanceissuse.presentation.vanilla.TAG_VANILLA
 
 class ProductViewHolder(
     private val binding: ItemProductBinding,
