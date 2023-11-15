@@ -105,5 +105,3 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
         const val VIEW_TYPE_LOADING = 2
     }
 }
-
-const val TAG_VANILLA = "vanilla"
