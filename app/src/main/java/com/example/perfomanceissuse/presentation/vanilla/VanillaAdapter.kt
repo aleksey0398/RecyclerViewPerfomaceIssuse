@@ -50,7 +50,7 @@ class VanillaAdapter : RecyclerView.Adapter<ViewHolder>() {
 
             VIEW_TYPE_CATEGORY -> {
                 val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                binding.recyclerProducts.setRecycledViewPool(sharedViewPoll)
+//                binding.recyclerProducts.setRecycledViewPool(sharedViewPoll)
                 CategoryViewHolder(binding)
             }
 

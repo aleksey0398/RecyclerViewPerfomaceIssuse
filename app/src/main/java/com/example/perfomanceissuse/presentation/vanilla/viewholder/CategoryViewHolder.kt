@@ -21,8 +21,8 @@ class CategoryViewHolder(
 
             layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
-                recycleChildrenOnDetach = true
-                initialPrefetchItemCount = 3
+//                recycleChildrenOnDetach = true
+//                initialPrefetchItemCount = 3
             }
 
             addItemDecoration(ProductDecoration())
@@ -32,7 +32,8 @@ class CategoryViewHolder(
     fun bind(state: CategoryItem.State) {
         Log.d(TAG, "Category [bind](${state.id})")
         binding.title.text = state.title
-        vanillaAdapter.submitNestedList(state.products)
+//        vanillaAdapter.submitNestedList(state.products)
+        vanillaAdapter.submitList(state.products)
     }
 
     private companion object {
